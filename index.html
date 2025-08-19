@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayeemul Islam Nayeem - E-Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Custom Tailwind Extensions and Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes subtleGlow {
+            0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.3); }
+            50% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.6); }
+            100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.3); }
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #60a5fa;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link:hover {
+            color: #60a5fa;
+        }
+        .link-hover {
+            position: relative;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+        .link-hover::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #60a5fa;
+            transition: width 0.3s ease;
+        }
+        .link-hover:hover::before {
+            width: 100%;
+        }
+        .link-hover:hover {
+            color: #60a5fa;
+            padding-left: 6px;
+        }
+        .typing-text::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        header {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(59, 130, 246, 0.7));
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #60a5fa;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 font-sans text-gray-200">
+    <!-- Header Component -->
+    <header class="text-gray-200 text-center py-20 px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-[scaleIn_0.8s_ease-out]">Nayeemul Islam Nayeem</h1>
+        <div class="typing-text text-lg md:text-xl font-light mb-6 min-h-[24px]"></div>
+        <div class="flex justify-center gap-6 flex-wrap">
+            <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
+            <a href="mailto:inayeemul909@gmail.com" class="flex items-center gap-2 link-hover"><i class="far fa-envelope"></i> inayeemul909@gmail.com</a>
+            <a href="tel:+8801760335921" class="flex items-center gap-2 link-hover"><i class="fas fa-phone-alt"></i> +8801760335921</a>
+            <a href="https://www.linkedin.com/in/nayeemul-islam-948a791aa/" target="_blank" class="flex items-center gap-2 link-hover"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+    </header>
+
+    <!-- Navigation Component -->
+    <nav class="bg-gray-800 text-gray-200 sticky top-0 z-50 shadow-sm">
+        <ul class="flex justify-center flex-wrap py-4 gap-2 md:gap-6">
+            <li><a href="#problem-solving" class="nav-link px-4 py-2 font-medium">Problem Solving</a></li>
+            <li><a href="#contests" class="nav-link px-4 py-2 font-medium">Contests</a></li>
+            <li><a href="#education" class="nav-link px-4 py-2 font-medium">Education</a></li>
+            <li><a href="#skills" class="nav-link px-4 py-2 font-medium">Skills</a></li>
+            <li><a href="#certifications" class="nav-link px-4 py-2 font-medium">Certifications</a></li>
+            <li><a href="#extracurricular" class="nav-link px-4 py-2 font-medium">Extracurricular</a></li>
+        </ul>
+    </nav>
+
+    <!-- Problem Solving Section -->
+    <section id="problem-solving" class="max-w-5xl mx-auto my-10 px-4 fade-in-section">
+        <div class="card bg-gray-800 p-8 rounded-lg shadow-sm">
+            <h2 class="text-2xl md:text-3xl font-semibold text-blue-400 mb-6 section-title">Problem Solving Experience</h2>
+            <ul class="space-y-4">
+                <li class="relative pl-6 animate-[fadeIn_0.5s_ease-out]"><span class="absolute left-0 text-blue-400">•</span>Ranked in the top 6% globally on <a href="https://tryhackme.com/p/Krak3n909" target="_blank" class="text-blue-300 link-hover">TryHackMe (THM)</a>, mastering challenges in penetration testing, network security, and digital forensics.</li>
+                <li class="relative pl-6 animate-[fadeIn_0.6s_ease-out]"><span class="absolute left-0 text-blue-400">•</span>Showcased over 500 solved coding problems on <a href="https://codolio.com/profile/Krak3n909" target="_blank" class="text-blue-300 link-hover">Codolio</a>, specializing in algorithms, data structures, and cybersecurity challenges with a focus on efficient, optimized solutions.</li>
+                <li class="relative pl-6 animate-[fadeIn_0.7s_ease-out]"><span class="absolute left-0 text-blue-400">•</span>Achieved top 46.67% ranking on <a href="https://leetcode.com/u/inayeemul909/" target="_blank" class="text-blue-300 link-hover">LeetCode</a>, demonstrating proficiency in complex problem-solving, algorithmic optimization, and coding best practices.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contests Section -->
+    <section id="contests" class="max-w-5xl mx-auto my-10 px-4 fade-in-section">
+        <div class="card bg-gray-800 p-8 rounded-lg shadow-sm">
+            <h2 class="text-2xl md:text-3xl font-semibold text-blue-400 mb-6 section-title">Contest Experience</h2>
+            <ul class="space-y-4">
+                <li class="relative pl-6 animate-[fadeIn_0.5s_ease-out]"><span class="absolute left-0 text-blue-400">•</span>Secured <a href="https://www.facebook.com/share/p/16gXgauZSG/" target="_blank" class="text-blue-300 link-hover">1st place in Cyber Bangla Batch 15 CTF</a>, excelling in penetration testing, vulnerability exploitation, and strategic problem-solving under time constraints.</li>
+                <li class="relative pl-6 animate-[fadeIn_0.6s_ease-out]"><span class="absolute left-0 text-blue-400">•</span>Attained 11th place in the preliminary round and 23rd in the final round of the EWU National Robotics Fest CTF, showcasing adaptability and technical expertise in competitive environments.</li>
+                <li class="relative pl-6 animate-[fadeIn_0.7s_ease-out]"><span class="absolute left-0 text-blue-400">•</span>Recognized as the highest scorer from AIUB in both Cyber Bangla Batch 15 CTF and EWU National Robotics Fest CTF, demonstrating leadership and technical excellence among peers.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="max-w-5xl mx-auto my-10 px-4 fade-in-section">
+        <div class="card bg-gray-800 p-8 rounded-lg shadow-sm">
+            <h2 class="text-2xl md:text-3xl font-semibold text-blue-400 mb-6 section-title">Education</h2>
+            <p class="mb-4"><strong>American International University-Bangladesh</strong><br>BSc. in Computer Science and Engineering<br>Expected Graduation: Dec 2026</p>
+            <ul class="space-y-4">
+                <li class="relative pl-6 animate-[fadeIn_0.5s_ease-out]"><span class="absolute left-0 text-blue-400">•</span><strong>Awards and Honors:</strong> Earned DEAN’S LIST HONORS for maintaining a GPA of 3.97/4.00 across multiple semesters.</li>
+                <li class="relative pl-6 animate-[fadeIn_0.6s_ease-out]"><span class="absolute left-0 text-blue-400">•</span><strong>Relevant Coursework:</strong> Advanced Algorithms, Database Management Systems, Computational Theory, Operating Systems, and Network Security.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-5xl mx-auto my-10 px-4 fade-in-section">
+        <div class="card bg-gray-800 p-8 rounded-lg shadow-sm">
+            <h2 class="text-2­­-2xl md:text-3xl font-semibold text-blue-400 mb-6 section-title">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card p-6 bg-gray-700 rounded-lg hover:animate-[subtleGlow_1.5s_infinite]">
+                    <h3 class="text-lg font-medium text-blue-400 mb-2">Tools</h3>
+                    <p>BurpSuite, OWASP ZAP, Metasploit, Armitage, Wireshark, Nmap, Kali Linux</p>
+                </div>
+                <div class="card p-6 bg-gray-700 rounded-lg hover:animate-[subtleGlow_1.5s_infinite]">
+                    <h3 class="text-lg font-medium text-blue-400 mb-2">Programming Languages</h3>
+                    <p>C++, Python, Java, C#, SQL, JavaScript, Bash</p>
+                </div>
+                <div class="card p-6 bg-gray-700 rounded-lg hover:animate-[subtleGlow_1.5s_infinite]">
+                    <h3 class="text-lg font-medium text-blue-400 mb-2">Technologies/Frameworks</h3>
+                    <p>.NET, Microsoft SQL Server</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="max-w-5xl mx-auto my-10 px-4 fade-in-section">
+        <div class="card bg-gray-800 p-8 rounded-lg shadow-sm">
+            <h2 class="text-2xl md:text-3xl font-semibold text-blue-400 mb-6 section-title">Certifications</h2>
+            <div class="space-y-4">
+                <div class="card p-6 bg-gray-700 rounded-lg hover:animate-[subtleGlow_1.5s_infinite]">
+                    <p><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/mfxGwGDp6WkQmtmTf/vcKAB5yYAgvemepGQ_mfxGwGDp6WkQmtmTf_tQBQotzbjakt6r8YY_1738331236463_completion_certificate.pdf" target="_blank" class="text-blue-300 link-hover">Mastercard Cybersecurity Virtual Experience Program</a> — Developed skills in threat analysis and secure system design.</p>
+                </div>
+                <div class="card p-6 bg-gray-700 rounded-lg hover:animate-[subtleGlow_1.5s_infinite]">
+                    <p><a href="https://elearning.securityblue.team/home/certificate/640218897" target="_blank" class="text-blue-300 link-hover">Vulnerability Management - SecurityBlue Team</a> — Mastered vulnerability assessment, Nessus scanning, and detailed report generation.</p>
+                </div>
+                <div class="card p-6 bg-gray-700 rounded-lg hover:animate-[subtleGlow_1.5s_infinite]">
+                    <p><a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-3GTL82TR93.pdf" target="_blank" class="text-blue-300 link-hover">TryHackMe Junior Penetration Tester Certification</a> — Demonstrated proficiency in penetration testing methodologies and tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extracurricular Section -->
+    <section id="extracurricular" class="max-w-5xl mx-auto my-10 px-4 fade-in-section">
+        <div class="card bg-gray-800 p-8 rounded-lg shadow-sm">
+            <h2 class="text-2xl md:text-3xl font-semibold text-blue-400 mb-6 section-title">Extracurricular Activities</h2>
+            <ul class="space-y-6">
+                <li>
+                    <strong class="text-lg">Member, AIUB Environment Club</strong> (2023–Present)
+                    <ul class="mt-2 space-y-2 pl-6">
+                        <li class="relative pl-6 animate-[fadeIn_0.5s_ease-out]"><span class="absolute left-0 text-blue-400">•</span>Organized tree giveaway campaigns, distributing saplings to promote environmental sustainability.</li>
+                        <li class="relative pl-6 animate-[fadeIn_0.6s_ease-out]"><span class="absolute left-0 text-blue-400">•</span>Participated in awareness rallies and events, engaging community members in eco-friendly initiatives.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong class="text-lg">Science Olympiad, District Champion</strong> (2021)
+                    <ul class="mt-2 space-y-2 pl-6">
+                        <li class="relative pl-6 animate-[fadeIn_0.5s_ease-out]"><span class="absolute left-0 text-blue-400">•</span>Won first place in regional competition, solving complex scientific problems in physics, maths, ICT, and chemistry.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <footer class="bg-gray-800 text-gray-200 text-center py-6">
+        <p class="text-sm">Last updated: July 2025 | © Nayeemul Islam Nayeem</p>
+    </footer>
+
+    <script>
+        // Typing Effect for Subtitle
+        const subtitles = [
+            "Cybersecurity Enthusiast",
+            "Problem Solver",
+            "Computer Science Student"
+        ];
+        let currentSubtitle = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const subtitleElement = document.querySelector('.typing-text');
+
+        function type() {
+            const currentText = subtitles[currentSubtitle];
+            subtitleElement.textContent = currentText.substring(0, charIndex);
+
+            if (!isDeleting && charIndex < currentText.length) {
+                charIndex++;
+                setTimeout(type, 100);
+            } else if (isDeleting && charIndex > 0) {
+                charIndex--;
+                setTimeout(type, 50);
+            } else {
+                isDeleting = !isDeleting;
+                if (!isDeleting) {
+                    currentSubtitle = (currentSubtitle + 1) % subtitles.length;
+                }
+                setTimeout(type, isDeleting ? 50 : 1200);
+            }
+        }
+        type();
+
+        // Section Fade-In on Load and Scroll
+        const sections = document.querySelectorAll('.fade-in-section');
+        sections.forEach((section, index) => {
+            setTimeout(() => {
+                section.classList.add('visible');
+            }, index * 200); // Staggered onload animation
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+
+        // Smooth Scrolling for Nav Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
